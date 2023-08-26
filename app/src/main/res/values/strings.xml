@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">open-work-mobile</string>
+    <string name="ic_progress_text">Andamento</string>
+    <string name="ic_completed_text">Completo</string>
+    <string name="ic_canceled_text">Cancelado</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

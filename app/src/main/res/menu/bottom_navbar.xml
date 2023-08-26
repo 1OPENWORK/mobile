@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <item
+        android:id="@+id/progress_id"
+        android:gravity="center_vertical"
+        android:icon="@drawable/ic_run_menu"
+        tools:ignore="MenuTitle" />
+    <item
+        android:id="@+id/completed_id"
+        android:gravity="center_vertical"
+        android:icon="@drawable/ic_task_completed_menu"
+        tools:ignore="MenuTitle" />
+    <item
+        android:id="@+id/canceled_id"
+        android:gravity="center_vertical"
+        android:icon="@drawable/ic_canceled_menu"
+        tools:ignore="MenuTitle" />
+
+</menu>

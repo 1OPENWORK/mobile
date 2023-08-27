@@ -1,12 +1,14 @@
-package com.stack.open_work_mobile
+package com.stack.open_work_mobile.lay_my_projects
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.stack.open_work_mobile.R
 import com.stack.open_work_mobile.databinding.ActivityMainBinding
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -19,18 +21,18 @@ class MainActivity : AppCompatActivity() {
         replaceFragment(ProgressMenuFragment())
 
 
-        binding.bottomNavigationView.setOnItemSelectedListener() {
+        binding.bottomNavigationViewMyProject.setOnItemSelectedListener() {
             when (it.itemId) {
                 R.id.progress_id -> replaceFragment(ProgressMenuFragment())
-
                 R.id.completed_id -> replaceFragment(CompletedMenuFragment())
-
                 R.id.canceled_id -> replaceFragment(CanceledMenuFragment())
-
             }
             true
         }
-        applyIconColorSelectorToMenuIcons(binding.bottomNavigationView)
+
+        applyIconColorSelectorToMenuIcons(binding.bottomNavigationViewMyProject)
+
+
     }
 
 
@@ -38,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.frame_layout, fragment)
+        fragmentTransaction.replace(R.id.frame_layout_my_project, fragment)
         fragmentTransaction.commit()
 
     }

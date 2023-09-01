@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".lay_my_projects.MainActivity">
 
+
+
+
     <FrameLayout
         android:id="@+id/frame_layout_my_project"
         android:layout_width="0dp"
@@ -22,11 +25,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="14dp"
         android:background="@drawable/bg_bottom_nav"
         app:itemIconSize="34dp"
         app:itemIconTint="@color/bottom_nav_icon_selector"
-        app:itemTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

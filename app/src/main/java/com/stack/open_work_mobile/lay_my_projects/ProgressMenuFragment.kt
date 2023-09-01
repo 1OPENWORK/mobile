@@ -5,12 +5,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.stack.open_work_mobile.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
+private lateinit var adapter: ProjectProgressCardAdapter
+private lateinit var recycleView: RecyclerView
+private lateinit var projectCardProcessList: ArrayList<ProjectProgressCard>
+
+lateinit var title: Array<String>
+lateinit var subTitle: Array<String>
+lateinit var desc: Array<String>
+
 
 /**
  * A simple [Fragment] subclass.
@@ -57,4 +70,38 @@ class ProgressMenuFragment : Fragment() {
                 }
             }
     }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        dataInit()
+
+        val layoutManager = LinearLayoutManager(context)
+        recycleView = view.findViewById(R.id.recycle_view_progress)
+        recycleView.layoutManager = layoutManager
+        recycleView.setHasFixedSize(true)
+        adapter = ProjectProgressCardAdapter(projectCardProcessList)
+        recycleView.adapter = adapter
+    }
+
+    private fun dataInit() {
+        projectCardProcessList = arrayListOf<ProjectProgressCard>()
+
+        title = arrayOf("Projeto 1", "Projeto 2", "Projeto 3")
+        subTitle = arrayOf("Close Work, 13/08/2023", "CLosed, 13/08/2023", "Formouch, 13/08/2023")
+        desc = arrayOf(
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ",
+            "Projeto 3 asohdjasnfkaskjfnkajsfkman smknfd kajsnjkl"
+        )
+
+        for (i: Int in title.indices) {
+
+            val project = ProjectProgressCard(title[i], subTitle[i], desc[i])
+            projectCardProcessList.add(project)
+        }
+
+    }
+
+
 }

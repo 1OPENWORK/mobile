@@ -1,24 +1,27 @@
 package com.stack.open_work_mobile.lay_my_projects
 
 import android.annotation.SuppressLint
+import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.stack.open_work_mobile.R
 import com.stack.open_work_mobile.databinding.ActivityMainBinding
+import com.stack.open_work_mobile.utils.Util
 
 @Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    @SuppressLint("UseCompatLoadingForColorStateLists")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         replaceFragment(ProgressMenuFragment())
+
 
 
         binding.bottomNavigationViewMyProject.setOnItemSelectedListener() {
@@ -29,8 +32,8 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-
-        applyIconColorSelectorToMenuIcons(binding.bottomNavigationViewMyProject)
+        val select = resources.getColorStateList(R.color.bottom_nav_icon_selector)
+        Util.applyIconColor(binding.bottomNavigationViewMyProject, select)
 
 
     }
@@ -45,18 +48,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    @SuppressLint("UseCompatLoadingForColorStateLists")
-    private fun applyIconColorSelectorToMenuIcons(bottomNavigationView: BottomNavigationView) {
-        val menu = bottomNavigationView.menu
-
-        for (i in 0 until menu.size()) {
-            val menuItem = menu.getItem(i)
-            val icon = menuItem.icon
-            val iconWithTint = icon?.mutate()
-            iconWithTint?.setTintList(resources.getColorStateList(R.color.bottom_nav_icon_selector))
-            menuItem.icon = iconWithTint
-        }
 
 
-    }
 }

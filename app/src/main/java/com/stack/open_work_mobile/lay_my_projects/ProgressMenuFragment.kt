@@ -87,7 +87,10 @@ class ProgressMenuFragment : Fragment() {
     private fun dataInit() {
         projectCardProcessList = arrayListOf<ProjectProgressCard>()
 
-        title = arrayOf("Projeto 1", "Projeto 2", "Projeto 3")
+        title = arrayOf(
+            "Projeto de Controle\n" +
+                    "PDV’s", "Projeto 2", "Projeto 3"
+        )
         subTitle = arrayOf("Close Work, 13/08/2023", "CLosed, 13/08/2023", "Formouch, 13/08/2023")
         desc = arrayOf(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
@@ -95,8 +98,9 @@ class ProgressMenuFragment : Fragment() {
             "Projeto 3 asohdjasnfkaskjfnkajsfkman smknfd kajsnjkl"
         )
 
-        for (i: Int in title.indices) {
 
+
+        for (i: Int in title.indices) {
             val project = ProjectProgressCard(title[i], subTitle[i], desc[i])
             projectCardProcessList.add(project)
         }

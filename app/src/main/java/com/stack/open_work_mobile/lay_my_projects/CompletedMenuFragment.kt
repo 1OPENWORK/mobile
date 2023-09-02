@@ -5,12 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.stack.open_work_mobile.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
+
+private lateinit var adapter: ProjectProgressCardAdapter
+private lateinit var recyclerView: RecyclerView
+private lateinit var projectCardCompleted: ArrayList<ProjectProgressCard>
+
 
 /**
  * A simple [Fragment] subclass.
@@ -56,5 +64,38 @@ class CompletedMenuFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        dataInit()
+
+        val layouManager = LinearLayoutManager(context)
+        recyclerView = view.findViewById(R.id.recycle_view_completed)
+        recyclerView.layoutManager = layouManager
+        recyclerView.setHasFixedSize(true)
+        adapter = ProjectProgressCardAdapter(projectCardCompleted)
+        recyclerView.adapter = adapter
+    }
+
+    private fun dataInit() {
+        projectCardCompleted = arrayListOf<ProjectProgressCard>()
+
+        title = arrayOf(
+            "Projeto completed 01 pdvs", "Projeto Completed 02", "Projeto 3"
+        )
+        subTitle = arrayOf("Company 1, 11/11/1111", "CClo, 11/11/1111", "FormOu, 11/11/1111")
+        desc = arrayOf(
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text o",
+            "Projeto 3 asohdjasnfkaskjfnkajsfkman smknfd kajsnjkl"
+        )
+
+        for (i: Int in title.indices) {
+
+            val project = ProjectProgressCard(title[i], subTitle[i], desc[i])
+            projectCardCompleted.add(project)
+        }
+
     }
 }

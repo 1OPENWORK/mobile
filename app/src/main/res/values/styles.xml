@@ -21,6 +21,12 @@
 
     <style name="CardProjectStyle">
         <item name="android:background">@drawable/bg_card_projects</item>
+        <item name="android:elevation">6sp</item>
+    </style>
+
+    <style name="CardProjectHome">
+        <item name="android:background">@drawable/bg_card_project_home</item>
+        <item name="android:elevation">6sp</item>
     </style>
 
 

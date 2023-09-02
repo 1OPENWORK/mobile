@@ -1,28 +1,36 @@
 package com.stack.open_work_mobile.lay_my_projects
 
 import android.annotation.SuppressLint
-import android.content.res.ColorStateList
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.stack.open_work_mobile.R
-import com.stack.open_work_mobile.databinding.ActivityMainBinding
+import com.stack.open_work_mobile.databinding.ActivityMyProjectsBinding
+import com.stack.open_work_mobile.lay_home.HomeActivity
 import com.stack.open_work_mobile.utils.Util
+import java.util.Objects
 
 @Suppress("DEPRECATION")
-class MainActivity : AppCompatActivity() {
+class MyProject : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMyProjectsBinding
 
     @SuppressLint("UseCompatLoadingForColorStateLists")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMyProjectsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         replaceFragment(ProgressMenuFragment())
 
 
+        binding.backToHome.setOnClickListener {
+            val intentToHome = Intent(this, HomeActivity::class.java)
+            startActivity(intentToHome)
+            finish()
+        }
 
         binding.bottomNavigationViewMyProject.setOnItemSelectedListener() {
             when (it.itemId) {
@@ -47,7 +55,6 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
 
     }
-
 
 
 }

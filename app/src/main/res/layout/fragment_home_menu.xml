@@ -1,296 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".lay_home.HomeMenuFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/constraintPai"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        android:layout_height="match_parent">
 
-
-        <TextView
-            android:id="@+id/menu"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:background="@color/PRIMARY_GREEN"
-            android:gravity="center_vertical"
-            android:paddingLeft="16dp"
-            android:text="OpenWork"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="@id/constraintPai" />
-
-        <TextView
-            android:id="@+id/perfilNotification"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginLeft="34dp"
-            android:layout_marginRight="34dp"
-            android:gravity="center_vertical"
-            android:text="Perfil                                                        Notificacao e chat"
-            app:layout_constraintTop_toBottomOf="@id/menu" />
-
-        <TextView
-            android:id="@+id/trend"
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:layout_marginLeft="34dp"
-            android:layout_marginRight="34dp"
-            android:text="Tendências Populares"
-            android:textColor="@color/PRIMARY_GREEN"
-            android:textSize="16sp"
-            android:textStyle="bold|normal"
-            app:layout_constraintTop_toBottomOf="@id/perfilNotification" />
-
-        <LinearLayout
-            android:id="@+id/linearForTrend"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="34dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginRight="34dp"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@id/trend">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="33dp"
-                android:text="1# Java"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="33dp"
-                android:text="2# React Native"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="33dp"
-                android:text="3# Infraestrutura cloud"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/projectsMenu"
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:layout_marginLeft="34dp"
-            android:layout_marginTop="39dp"
-            android:layout_marginRight="34dp"
-            android:text="Projetos"
-            android:textColor="@color/PRIMARY_GREEN"
-            android:textSize="16sp"
-            android:textStyle="bold|normal"
-            app:layout_constraintTop_toBottomOf="@id/linearForTrend" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/cardProject"
-            style="@style/CardProjectHome"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/constraintPai"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_margin="32dp"
-            app:layout_constraintTop_toBottomOf="@id/projectsMenu">
+            android:layout_height="match_parent">
 
-
-            <LinearLayout
-                android:id="@+id/companyTitle"
-                android:layout_width="0dp"
-                android:layout_height="22dp"
-                android:layout_marginTop="16dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@id/descriptionProject"
-                app:layout_constraintTop_toTopOf="@id/cardProject">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="22dp"
-                    android:text="OpenWork"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="22dp"
-                    android:layout_marginLeft="8dp"
-                    android:text="5"
-                    android:textColor="#E09B33"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:baselineAlignBottom="true"
-                    android:src="@drawable/ic_star_project_avaliation" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="22dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_weight="4"
-                    android:text="20/08/2023"
-                    android:textAlignment="textEnd"
-                    android:textColor="#545454"
-                    android:textSize="12sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/logoCompany"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="16dp"
-                android:layout_weight="1"
-
-                android:src="@drawable/ic_image_not_found"
-                app:layout_constraintEnd_toStartOf="@id/descriptionProject"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/descriptionProject" />
 
             <TextView
-                android:id="@+id/descriptionProject"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Criar plataforma freelancer do zero, backend, frontend, bd conectado na nuvem, e aplicação mobile."
-                android:textSize="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/logoCompany"
-                app:layout_constraintTop_toBottomOf="@id/companyTitle" />
+                android:id="@+id/trend"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_marginLeft="34dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="34dp"
+                android:text="Tendências Populares"
+                android:textColor="@color/PRIMARY_GREEN"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
-                android:id="@+id/linearEspecificationProject"
+                android:id="@+id/linearForTrend"
                 android:layout_width="match_parent"
-                android:layout_height="24dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="16dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/descriptionProject">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="34dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="34dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/trend">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Quantidade devs"
-                        android:textColor="@color/black"
-                        android:textSize="8sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/descriptionProject" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="6"
-                        android:textColor="@color/black"
-                        android:textSize="8sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/descriptionProject" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Término estimado"
-                        android:textColor="@color/black"
-                        android:textSize="8sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/descriptionProject" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="25/11/2023"
-                        android:textColor="@color/black"
-                        android:textSize="8sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/descriptionProject" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Valor"
-                        android:textColor="@color/black"
-                        android:textSize="8sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/descriptionProject" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="R$ 1.000,00"
-                        android:textColor="@color/black"
-                        android:textSize="8sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/descriptionProject" />
-                </LinearLayout>
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/bg_button_app"
-                    android:padding="3dp"
-                    android:text="Candidatar"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="12sp"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:text="1# Java"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:text="2# React Native"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:text="3# Infraestrutura cloud"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/projectsMenu"
+                android:layout_width="match_parent"
+                android:layout_height="22dp"
+                android:layout_marginLeft="34dp"
+                android:layout_marginTop="42dp"
+                android:layout_marginRight="34dp"
+                android:text="Projetos"
+                android:textColor="@color/PRIMARY_GREEN"
+                android:textSize="16sp"
+                android:textStyle="bold|normal"
+                app:layout_constraintTop_toBottomOf="@id/linearForTrend" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycle_view_card_home"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/projectsMenu"
+                tools:listitem="@layout/list_item_project_home_open" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</FrameLayout>
+    </FrameLayout>
+</androidx.core.widget.NestedScrollView>

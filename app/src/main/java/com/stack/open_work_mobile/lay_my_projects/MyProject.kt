@@ -29,7 +29,6 @@ class MyProject : AppCompatActivity() {
         binding.backToHome.setOnClickListener {
             val intentToHome = Intent(this, HomeActivity::class.java)
             startActivity(intentToHome)
-            finish()
         }
 
         binding.bottomNavigationViewMyProject.setOnItemSelectedListener() {

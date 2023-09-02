@@ -32,7 +32,6 @@ class HomeActivity : AppCompatActivity() {
                 R.id.my_project_home_id -> {
                     val intent = Intent(this, MyProject::class.java)
                     startActivity(intent)
-                    finish()
                 }
             }
             true

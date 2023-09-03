@@ -29,5 +29,10 @@
         <item name="android:elevation">6sp</item>
     </style>
 
+    <style name="AppChipStyle" parent="Widget.MaterialComponents.ChipGroup">
+        <item name="android:backgroundTint">@drawable/bg_button_app</item>
+
+    </style>
+
 
 </resources>

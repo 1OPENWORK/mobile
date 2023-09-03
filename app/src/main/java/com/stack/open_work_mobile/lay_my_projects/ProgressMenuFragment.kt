@@ -9,6 +9,8 @@ import android.widget.Adapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
+import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipGroup
 import com.stack.open_work_mobile.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -23,6 +25,7 @@ private lateinit var projectCardProcessList: ArrayList<ProjectProgressCard>
 lateinit var title: Array<String>
 lateinit var subTitle: Array<String>
 lateinit var desc: Array<String>
+lateinit var tools: ArrayList<Chip>
 
 
 /**
@@ -82,6 +85,8 @@ class ProgressMenuFragment : Fragment() {
         recycleView.setHasFixedSize(true)
         adapter = ProjectProgressCardAdapter(projectCardProcessList)
         recycleView.adapter = adapter
+
+
     }
 
     private fun dataInit() {
@@ -97,6 +102,7 @@ class ProgressMenuFragment : Fragment() {
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ",
             "Projeto 3 asohdjasnfkaskjfnkajsfkman smknfd kajsnjkl"
         )
+
 
 
 

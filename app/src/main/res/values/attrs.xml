@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CardPerson">
+        <attr name="nome_person" format="string" />
+        <attr name="message" format="string" />
+        <attr name="img" format="string" />
+        <attr name="timer" format="string" />
+    </declare-styleable>
+</resources>

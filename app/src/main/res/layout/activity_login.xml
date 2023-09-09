@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".lay_login.LoginActivity">
+
+    <ImageView
+        android:id="@+id/svgWavesLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/waves_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/nunito_black"
+        android:text="Entrar"
+        android:textColor="#20AC69"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svgWavesLogin" />
+
+    <TextView
+        android:id="@+id/subtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunito_black"
+        android:text="Por favor entre com os dados para continuar"
+        android:textColor="@color/SECODNARY_GREEEN"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title" />
+
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="310dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/input_login"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawableTint="@color/SECODNARY_GREEEN"
+        android:hint=" Email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="18dp"
+        android:textColor="#B320AC69"
+        android:textColorHint="@color/SECODNARY_GREEEN"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subtitulo" />
+
+    <EditText
+        android:id="@+id/senhaInput"
+        android:layout_width="310dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/input_login"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawableTint="@color/SECODNARY_GREEEN"
+        android:hint=" Senha"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="18dp"
+        android:textColor="#B320AC69"
+        android:textColorHint="@color/SECODNARY_GREEEN"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailInput" />
+
+
+    <CheckBox
+        android:id="@+id/checkboxLembraSe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#20AC69"
+        android:checked="false"
+        android:text="Mantenha-me conectado"
+        android:textColor="#545454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/senhaInput" />
+
+    <TextView
+        android:id="@+id/esqueciSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/nunito_black"
+        android:text="Esqueci minha senha"
+        android:textColor="#20AC69"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/checkboxLembraSe"
+        app:layout_constraintTop_toBottomOf="@+id/senhaInput" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/bg_black_button"
+        android:fontFamily="@font/nunito_black"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Acessar"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.765" />
+
+    <TextView
+        android:id="@+id/novo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunito_black"
+        android:text="Novo?"
+        android:textColor="#545454"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+    <TextView
+        android:id="@+id/cadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunito_black"
+        android:text="Cadastre-se"
+        android:textColor="#20AC69"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/novo"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+
+    <TextView
+        android:id="@+id/direitos"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/nunito_black"
+        android:text=" ©️ OpenWork Todos direitos reservados Termos e condições
+    e politica de privacidade"
+        android:textAlignment="center"
+        android:textColor="#545454"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/novo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

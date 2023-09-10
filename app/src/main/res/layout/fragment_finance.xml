@@ -8,7 +8,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingBottom="28dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -17,42 +18,14 @@
             android:layout_marginTop="30dp"
             android:layout_marginRight="30dp">
 
-            <ImageView
-                android:id="@+id/imgUser"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/user"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/sininho"
-                android:layout_width="55dp"
-                android:layout_height="45dp"
-                android:background="@drawable/button_sininho"
-                android:padding="8dp"
-                android:src="@drawable/sininho"
-                app:layout_constraintEnd_toStartOf="@+id/chat"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/chat"
-                android:layout_width="55dp"
-                android:layout_height="45dp"
-                android:background="@drawable/button_chat"
-                android:padding="8dp"
-                android:src="@drawable/chat"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/subtitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="68dp"
-                android:layout_marginTop="88dp"
-                android:fontFamily="@font/nunito_bold"
+                android:fontFamily="@font/nunito_black"
                 android:text="Saldo"
                 android:textColor="#20AC69"
                 android:textSize="12sp"
@@ -86,7 +59,7 @@
                     android:layout_height="45dp"
                     android:layout_marginTop="4dp"
                     android:background="@drawable/button_sininho"
-                    android:fontFamily="@font/nunito_bold"
+                    android:fontFamily="@font/nunito_black"
                     android:paddingTop="13dp"
                     android:text="+ 15%"
                     android:textAlignment="center"
@@ -99,7 +72,7 @@
                     android:layout_height="45dp"
                     android:layout_marginTop="4dp"
                     android:background="@drawable/button_chat"
-                    android:fontFamily="@font/nunito_bold"
+                    android:fontFamily="@font/nunito_black"
                     android:paddingTop="13dp"
                     android:text="+1800"
                     android:textAlignment="center"
@@ -174,7 +147,7 @@
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="26dp"
-                    android:fontFamily="@font/nunito_bold"
+                    android:fontFamily="@font/nunito_black"
                     android:text="Graficos"
                     android:textAlignment="center"
                     android:textColor="#20AC69"
@@ -187,7 +160,7 @@
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="26dp"
-                    android:fontFamily="@font/nunito_bold"
+                    android:fontFamily="@font/nunito_black"
                     android:text="A receber"
                     android:textAlignment="center"
                     android:textColor="#20AC69"
@@ -200,7 +173,7 @@
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="26dp"
-                    android:fontFamily="@font/nunito_bold"
+                    android:fontFamily="@font/nunito_black"
                     android:text="Recebido"
                     android:textAlignment="center"
                     android:textColor="#20AC69"
@@ -212,7 +185,7 @@
                     android:id="@+id/perdidoSubtitulo"
                     android:layout_width="60dp"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_bold"
+                    android:fontFamily="@font/nunito_black"
                     android:text="Perdido"
                     android:textAlignment="center"
                     android:textColor="#20AC69"
@@ -227,7 +200,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:fontFamily="@font/nunito_bold"
+                android:fontFamily="@font/nunito_black"
                 android:text="A receber"
                 android:textAlignment="viewStart"
                 android:textColor="#20AC69"
@@ -280,7 +253,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="26dp"
-                        android:fontFamily="@font/nunito_light"
+                        android:fontFamily="@font/nunito_black"
                         android:text="30/09/2023"
                         android:textAlignment="center"
                         android:textColor="#20AC69"
@@ -348,7 +321,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="26dp"
-                        android:fontFamily="@font/nunito_light"
+                        android:fontFamily="@font/nunito_black"
                         android:text="30/09/2023"
                         android:textAlignment="center"
                         android:textColor="#20AC69"
@@ -415,7 +388,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="26dp"
-                        android:fontFamily="@font/nunito_light"
+                        android:fontFamily="@font/nunito_black"
                         android:text="30/09/2023"
                         android:textAlignment="center"
                         android:textColor="#20AC69"
@@ -481,7 +454,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="26dp"
-                        android:fontFamily="@font/nunito_light"
+                        android:fontFamily="@font/nunito_black"
                         android:text="30/09/2023"
                         android:textAlignment="center"
                         android:textColor="#20AC69"

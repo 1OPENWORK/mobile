@@ -33,6 +33,8 @@ class HomeActivity : AppCompatActivity() {
                     val intent = Intent(this, MyProject::class.java)
                     startActivity(intent)
                 }
+
+                R.id.finance_home_id -> replaceFragment(FinanceFragment())
             }
             true
         }

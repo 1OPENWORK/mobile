@@ -5,7 +5,8 @@
     style="@style/CardProjectHome"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:layout_margin="12dp">
+    android:layout_marginHorizontal="32dp"
+    android:layout_marginBottom="24dp">
 
 
     <LinearLayout

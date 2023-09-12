@@ -31,8 +31,10 @@
 
     <style name="AppChipStyle" parent="Widget.MaterialComponents.ChipGroup">
         <item name="android:backgroundTint">@drawable/bg_button_app</item>
-
     </style>
 
+    <style name="SearchBar">
+        <item name="android:background">@drawable/bg_search_bar</item>
+    </style>
 
 </resources>

@@ -6,46 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".lay_login.LoginActivity">
 
-    <ImageView
-        android:id="@+id/svgWavesLogin"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="-0.02" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <ImageView
+        android:id="@+id/svgWavesLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
         android:src="@drawable/waves_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_image" />
+
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/nunito_black"
         android:text="Entrar"
         android:textColor="#20AC69"
         android:textSize="36sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/svgWavesLogin" />
 
     <TextView
         android:id="@+id/subtitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/nunito_black"
         android:text="Por favor entre com os dados para continuar"
         android:textColor="@color/SECODNARY_GREEEN"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <EditText
         android:id="@+id/emailInput"
-        android:layout_width="310dp"
+        android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="38dp"
         android:background="@drawable/input_login"
         android:drawableLeft="@drawable/ic_email"
@@ -56,14 +76,14 @@
         android:textColor="#B320AC69"
         android:textColorHint="@color/SECODNARY_GREEEN"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/subtitulo" />
 
     <EditText
         android:id="@+id/senhaInput"
-        android:layout_width="310dp"
+        android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/input_login"
         android:drawableLeft="@drawable/ic_password"
@@ -74,7 +94,8 @@
         android:textColor="#B320AC69"
         android:textColorHint="@color/SECODNARY_GREEEN"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/emailInput" />
 
 
@@ -82,22 +103,21 @@
         android:id="@+id/checkboxLembraSe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="#20AC69"
         android:checked="false"
-        android:textSize="12dp"
         android:text="Mantenha-me conectado"
         android:textColor="#545454"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/senhaInput" />
 
     <TextView
         android:id="@+id/esqueciSenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/nunito_black"
         android:text="Esqueci minha senha"
         android:textColor="#20AC69"
@@ -118,40 +138,37 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/checkboxLembraSe"
-        />
+        app:layout_constraintTop_toBottomOf="@id/checkboxLembraSe" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/btn_google_login"
         android:layout_width="44dp"
         android:layout_height="44dp"
-        app:layout_constraintTop_toBottomOf="@id/novo"
-        android:src="@drawable/ic_google"
         android:layout_marginTop="18dp"
+        android:src="@drawable/ic_google"
         app:layout_constraintStart_toStartOf="@id/novo"
-        />
+        app:layout_constraintTop_toBottomOf="@id/novo" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/btn_link_login"
         android:layout_width="44dp"
         android:layout_height="44dp"
-        app:layout_constraintTop_toTopOf="@id/btn_google_login"
-        app:layout_constraintStart_toEndOf="@id/btn_google_login"
-        app:layout_constraintEnd_toEndOf="@id/cadastrar"
         android:src="@drawable/ic_link"
-        />
+        app:layout_constraintEnd_toEndOf="@id/cadastrar"
+        app:layout_constraintStart_toEndOf="@id/btn_google_login"
+        app:layout_constraintTop_toTopOf="@id/btn_google_login" />
 
     <TextView
         android:id="@+id/novo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
+        android:layout_marginStart="108dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/nunito_black"
         android:text="Novo?"
         android:textColor="#545454"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
     <TextView
@@ -171,15 +188,15 @@
         android:id="@+id/direitos"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/nunito_black"
         android:text=" ©️ OpenWork Todos direitos reservados Termos e condições
     e politica de privacidade"
         android:textAlignment="center"
         android:textColor="#545454"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/btn_google_login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

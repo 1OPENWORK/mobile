@@ -62,42 +62,56 @@
         app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
-    <EditText
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailInput"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="38dp"
-        android:background="@drawable/input_login"
-        android:drawableLeft="@drawable/ic_email"
-        android:drawableTint="@color/SECODNARY_GREEEN"
-        android:hint=" Email"
-        android:inputType="textEmailAddress"
-        android:paddingLeft="18dp"
-        android:textColor="#B320AC69"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/BLACK_GRAY"
         android:textColorHint="@color/SECODNARY_GREEEN"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
-        app:layout_constraintStart_toStartOf="@id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/subtitulo" />
 
-    <EditText
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/subtitulo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_login"
+            android:drawableEnd="@drawable/ic_email"
+            android:drawableTint="#6E6E6E"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/senhaInput"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/input_login"
-        android:drawableLeft="@drawable/ic_password"
-        android:drawableTint="@color/SECODNARY_GREEEN"
-        android:hint=" Senha"
-        android:inputType="textEmailAddress"
-        android:paddingLeft="18dp"
-        android:textColor="#B320AC69"
+        android:layout_height="wrap_content"
+        android:textColor="@color/BLACK_GRAY"
         android:textColorHint="@color/SECODNARY_GREEEN"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@id/guideline_end"
+        app:endIconTint="@color/PRIMARY_GREEN"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/emailInput" />
+        app:layout_constraintTop_toBottomOf="@id/emailInput"
+        app:passwordToggleEnabled="true">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_login"
+            android:hint="Senha"
+            android:inputType="textWebPassword"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
         android:id="@+id/checkboxLembraSe"

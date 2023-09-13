@@ -1,6 +1,5 @@
 package com.stack.open_work_mobile.utils
 
-import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -13,10 +12,9 @@ internal class Util : AppCompatActivity() {
             return email.matches(emailRegex.toRegex())
         }
 
-        @SuppressLint("UseCompatLoadingForColorStateLists")
         fun applyIconColor(
             bottomNavigationView: BottomNavigationView,
-            colorStateList: ColorStateList
+            iconColorStateList: ColorStateList
         ) {
             val menu = bottomNavigationView.menu
 
@@ -24,11 +22,10 @@ internal class Util : AppCompatActivity() {
                 val menuItem = menu.getItem(i)
                 val icon = menuItem.icon
                 val iconWithTint = icon?.mutate()
-                iconWithTint?.setTintList(colorStateList)
+                iconWithTint?.setTintList(iconColorStateList)
                 menuItem.icon = iconWithTint
             }
         }
-
 
 
     }

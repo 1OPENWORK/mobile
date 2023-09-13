@@ -28,7 +28,8 @@ class HomeActivity : AppCompatActivity() {
 
         binding.bottomNavigationViewHome.setOnItemSelectedListener() {
             when (it.itemId) {
-                R.id.project_home_id -> replaceFragment(HomeMenuFragment())
+                R.id.house_home_id -> replaceFragment(HomeMenuFragment())
+//                R.id.project_home_id -> replaceFragment()
                 R.id.my_project_home_id -> {
                     val intent = Intent(this, MyProject::class.java)
                     startActivity(intent)

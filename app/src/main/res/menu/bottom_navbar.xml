@@ -6,14 +6,14 @@
     <item
         android:id="@+id/progress_id"
         android:icon="@drawable/ic_run_menu"
-        tools:ignore="MenuTitle" />
+        android:title="Andamento" />
     <item
         android:id="@+id/completed_id"
         android:icon="@drawable/ic_task_completed_menu"
-        tools:ignore="MenuTitle" />
+        android:title="Concluído" />
     <item
         android:id="@+id/canceled_id"
         android:icon="@drawable/ic_canceled_menu"
-        tools:ignore="MenuTitle" />
+        android:title="Cancelado" />
 
 </menu>

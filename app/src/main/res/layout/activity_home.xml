@@ -75,10 +75,10 @@
             style="@style/AppButtonStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="14dp"
             android:layout_weight="1"
             android:drawableStart="@drawable/ic_notify_menu_float"
             android:drawableEnd="@drawable/ic_user_profile"
-            android:layout_marginEnd="14dp"
             android:paddingStart="12dp"
             android:paddingEnd="12dp" />
 
@@ -98,14 +98,10 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationViewHome"
         style="@style/BottomNavigationViewStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="14dp"
-        android:background="@drawable/bg_bottom_nav"
-        app:itemIconSize="34dp"
-        app:itemIconTint="@color/bottom_nav_icon_selector"
+        app:itemIconSize="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

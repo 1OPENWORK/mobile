@@ -1,4 +1,4 @@
-package com.stack.open_work_mobile.lay_home
+package com.stack.open_work_mobile.activities.lay_home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package com.stack.open_work_mobile.lay_my_projects
+package com.stack.open_work_mobile.activities.lay_my_projects
 
 data class ProjectProgressCard(
     var title: String,

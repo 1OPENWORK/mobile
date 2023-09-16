@@ -1,4 +1,4 @@
-package com.stack.open_work_mobile.lay_login
+package com.stack.open_work_mobile.activities.lay_login
 
 import android.content.Intent
 import android.graphics.Color
@@ -10,7 +10,7 @@ import android.view.View
 import com.google.android.material.snackbar.Snackbar
 import com.stack.open_work_mobile.R
 import com.stack.open_work_mobile.databinding.ActivityLoginBinding
-import com.stack.open_work_mobile.lay_home.HomeActivity
+import com.stack.open_work_mobile.activities.lay_home.HomeActivity
 import com.stack.open_work_mobile.utils.Util
 
 class LoginActivity : AppCompatActivity() {

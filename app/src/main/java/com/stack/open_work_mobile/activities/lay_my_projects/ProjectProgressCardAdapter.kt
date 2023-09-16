@@ -1,4 +1,4 @@
-package com.stack.open_work_mobile.lay_my_projects
+package com.stack.open_work_mobile.activities.lay_my_projects
 
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +14,7 @@ class ProjectProgressCardAdapter(private val projectProcessList: ArrayList<Proje
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ProjectProgressCardAdapter.MyViewHolder {
+    ): MyViewHolder {
 
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.list_item_project_progress, parent, false)
@@ -22,7 +22,7 @@ class ProjectProgressCardAdapter(private val projectProcessList: ArrayList<Proje
         return MyViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(holder: ProjectProgressCardAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = projectProcessList[position]
         holder.title.text = currentItem.title
         holder.subTitle.text = currentItem.subTitle

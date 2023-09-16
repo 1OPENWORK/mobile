@@ -1,12 +1,16 @@
-package com.stack.open_work_mobile.lay_my_projects
+package com.stack.open_work_mobile.activities.lay_my_projects
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Adapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
+import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipGroup
 import com.stack.open_work_mobile.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -14,18 +18,22 @@ import com.stack.open_work_mobile.R
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-
 private lateinit var adapter: ProjectProgressCardAdapter
-private lateinit var recyclerView: RecyclerView
-private lateinit var projectCardCompleted: ArrayList<ProjectProgressCard>
+private lateinit var recycleView: RecyclerView
+private lateinit var projectCardProcessList: ArrayList<ProjectProgressCard>
+
+lateinit var title: Array<String>
+lateinit var subTitle: Array<String>
+lateinit var desc: Array<String>
+lateinit var tools: ArrayList<Chip>
 
 
 /**
  * A simple [Fragment] subclass.
- * Use the [CompletedMenuFragment.newInstance] factory method to
+ * Use the [ProgressMenuFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class CompletedMenuFragment : Fragment() {
+class ProgressMenuFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -43,7 +51,7 @@ class CompletedMenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_completed_menu, container, false)
+        return inflater.inflate(R.layout.fragment_progress_menu, container, false)
     }
 
     companion object {
@@ -53,12 +61,12 @@ class CompletedMenuFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment CompletedMenuFragment.
+         * @return A new instance of fragment ProgressMenuFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            CompletedMenuFragment().apply {
+            ProgressMenuFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
@@ -66,36 +74,44 @@ class CompletedMenuFragment : Fragment() {
             }
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dataInit()
 
-        val layouManager = LinearLayoutManager(context)
-        recyclerView = view.findViewById(R.id.recycle_view_completed)
-        recyclerView.layoutManager = layouManager
-        recyclerView.setHasFixedSize(true)
-        adapter = ProjectProgressCardAdapter(projectCardCompleted)
-        recyclerView.adapter = adapter
+        val layoutManager = LinearLayoutManager(context)
+        recycleView = view.findViewById(R.id.recycle_view_progress)
+        recycleView.layoutManager = layoutManager
+        recycleView.setHasFixedSize(true)
+        adapter = ProjectProgressCardAdapter(projectCardProcessList)
+        recycleView.adapter = adapter
+
+
     }
 
     private fun dataInit() {
-        projectCardCompleted = arrayListOf<ProjectProgressCard>()
+        projectCardProcessList = arrayListOf<ProjectProgressCard>()
 
         title = arrayOf(
-            "Projeto completed 01 pdvs", "Projeto Completed 02", "Projeto 3"
+            "Projeto de Controle\n" +
+                    "PDV’s", "Projeto 2", "Projeto 3"
         )
-        subTitle = arrayOf("Company 1, 11/11/1111", "CClo, 11/11/1111", "FormOu, 11/11/1111")
+        subTitle = arrayOf("Close Work, 13/08/2023", "CLosed, 13/08/2023", "Formouch, 13/08/2023")
         desc = arrayOf(
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text o",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ",
             "Projeto 3 asohdjasnfkaskjfnkajsfkman smknfd kajsnjkl"
         )
 
-        for (i: Int in title.indices) {
 
+
+
+        for (i: Int in title.indices) {
             val project = ProjectProgressCard(title[i], subTitle[i], desc[i])
-            projectCardCompleted.add(project)
+            projectCardProcessList.add(project)
         }
 
     }
+
+
 }

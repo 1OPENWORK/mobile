@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".lay_home.HomeMenuFragment">
+    tools:context=".activities.lay_home.HomeMenuFragment">
 
     <FrameLayout
         android:layout_width="match_parent"

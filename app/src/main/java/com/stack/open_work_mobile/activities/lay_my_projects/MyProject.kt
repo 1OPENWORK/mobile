@@ -1,4 +1,4 @@
-package com.stack.open_work_mobile.lay_my_projects
+package com.stack.open_work_mobile.activities.lay_my_projects
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -8,7 +8,7 @@ import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.stack.open_work_mobile.R
 import com.stack.open_work_mobile.databinding.ActivityMyProjectsBinding
-import com.stack.open_work_mobile.lay_home.HomeActivity
+import com.stack.open_work_mobile.activities.lay_home.HomeActivity
 import com.stack.open_work_mobile.utils.Util
 import java.util.Objects
 
@@ -16,7 +16,6 @@ import java.util.Objects
 class MyProject : AppCompatActivity() {
 
     private lateinit var binding: ActivityMyProjectsBinding
-
     @SuppressLint("UseCompatLoadingForColorStateLists")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,12 +24,10 @@ class MyProject : AppCompatActivity() {
 
         replaceFragment(ProgressMenuFragment())
 
-
         binding.backToHome.setOnClickListener {
             val intentToHome = Intent(this, HomeActivity::class.java)
             startActivity(intentToHome)
         }
-
         binding.bottomNavigationViewMyProject.setOnItemSelectedListener() {
             when (it.itemId) {
                 R.id.progress_id -> replaceFragment(ProgressMenuFragment())
@@ -41,18 +38,14 @@ class MyProject : AppCompatActivity() {
         }
         val select = resources.getColorStateList(R.color.bottom_nav_icon_selector)
         Util.applyIconColor(binding.bottomNavigationViewMyProject, select)
-
-
     }
 
 
     private fun replaceFragment(fragment: Fragment) {
-
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frame_layout_my_project, fragment)
         fragmentTransaction.commit()
-
     }
 
 

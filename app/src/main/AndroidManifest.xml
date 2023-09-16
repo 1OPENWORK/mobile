@@ -13,19 +13,25 @@
         android:theme="@style/Theme.Openworkmobile"
         tools:targetApi="31">
         <activity
-            android:name=".lay_login.LoginActivity"
+            android:name=".activities.Rating.RatingCompanies"
             android:exported="false" />
         <activity
-            android:name=".lay_home.HomeActivity"
+            android:name=".activities.Notify.NotificationActivity"
             android:exported="false" />
         <activity
-            android:name=".lay_login.EntranceActivity"
+            android:name=".activities.lay_login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".lay_my_projects.MyProject"
+            android:name=".activities.lay_home.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".lay_login.LoadActivity"
+            android:name=".activities.lay_login.EntranceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.lay_my_projects.MyProject"
+            android:exported="false" />
+        <activity
+            android:name=".activities.lay_login.LoadActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

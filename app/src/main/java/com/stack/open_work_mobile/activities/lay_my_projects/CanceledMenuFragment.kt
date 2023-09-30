@@ -67,30 +67,30 @@ class CanceledMenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        dataInit()
+//        dataInit()
 
-        val layoutManager = LinearLayoutManager(context)
-        recyclerView = view.findViewById(R.id.recycle_view_canceled)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.setHasFixedSize(true)
-        adapter = ProjectProgressCardAdapter(projectCardCanceled)
-        recyclerView.adapter = adapter
+//        val layoutManager = LinearLayoutManager(context)
+//        recyclerView = view.findViewById(R.id.recycle_view_canceled)
+//        recyclerView.layoutManager = layoutManager
+//        recyclerView.setHasFixedSize(true)
+//        adapter = ProjectProgressCardAdapter(projectCardCanceled)
+//        recyclerView.adapter = adapter
     }
 
-    private fun dataInit() {
-        projectCardCanceled = arrayListOf<ProjectProgressCard>()
-
-        title = arrayOf("canceled 01", "canceled 02", "canceled 03")
-        subTitle = arrayOf("Canced, 22/22/2222", "Canced, 22/22/2222", "Canced, 22/22/2222")
-        desc = arrayOf(
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-        )
-
-        for (i in title.indices) {
-            val project = ProjectProgressCard(title[i], subTitle[i], desc[i])
-            projectCardCanceled.add(project)
-        }
-    }
+//    private fun dataInit() {
+//        projectCardCanceled = arrayListOf<ProjectProgressCard>()
+//
+//        title = arrayOf("canceled 01", "canceled 02", "canceled 03")
+//        subTitle = arrayOf("Canced, 22/22/2222", "Canced, 22/22/2222", "Canced, 22/22/2222")
+//        desc = arrayOf(
+//            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+//            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+//            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+//        )
+//
+//        for (i in title.indices) {
+//            val project = ProjectProgressCard(title[i], subTitle[i], desc[i])
+//            projectCardCanceled.add(project)
+//        }
+//    }
 }

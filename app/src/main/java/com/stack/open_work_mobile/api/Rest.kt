@@ -7,10 +7,9 @@ object Rest {
     fun getInstance(): Retrofit? {
         return Retrofit
             .Builder()
-            .baseUrl("http://52.21.11.236:8080/api/")
+            .baseUrl("http://52.21.11.236:8080/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-
     }
 
 }

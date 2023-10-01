@@ -22,12 +22,12 @@ class ProjectCardHomeAdapter(private val projectCardHomeList: ArrayList<CardProj
     override fun onBindViewHolder(holder: MyViewHolderCardProject, position: Int) {
         val currentItem = projectCardHomeList[position]
 
-        holder.companyName.text = currentItem.companyName
-        holder.avaliationCompany.text = currentItem.avaliationCompany.toString()
-        holder.describe.text = currentItem.describe
-        holder.dateCreated.text = currentItem.dateCreated
-        holder.dataEnd.text = currentItem.dateEnd
-        holder.qtdDev.text = currentItem.qtdDev.toString()
+        holder.companyName.text = currentItem.nameCompany
+        holder.avaliationCompany.text = currentItem.grade.toString()
+        holder.describe.text = currentItem.description
+      //  holder.dateCreated.text = currentItem.dateCreated
+       // holder.dataEnd.text = currentItem.dateEnd
+        holder.qtdDev.text = currentItem.maxDevelopers.toString()
         holder.value.text = currentItem.value.toString()
     }
 

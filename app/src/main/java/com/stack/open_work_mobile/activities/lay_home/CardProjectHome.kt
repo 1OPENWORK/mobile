@@ -4,11 +4,12 @@ import java.time.LocalDate
 import java.util.Date
 
 data class CardProjectHome(
-    var companyName: String,
-    var avaliationCompany: Int,
-    var describe: String,
-    var dateCreated: String,
-    var dateEnd: String,
-    var qtdDev: Int,
-    var value: String
+    val id: Long,
+    var imageCompany: String,
+    var nameCompany: String,
+    var grade: Double,
+    var title: String,
+    var description: String,
+    var maxDevelopers: Int,
+    var value: String   
 )

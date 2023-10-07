@@ -1,13 +1,20 @@
 package com.stack.open_work_mobile.activities.lay_my_projects
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.stack.open_work_mobile.R
+import com.stack.open_work_mobile.api.Rest
+import com.stack.open_work_mobile.services.ProjectService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,6 +37,7 @@ class CanceledMenuFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        projectCardCanceled = ArrayList()
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -40,8 +48,13 @@ class CanceledMenuFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_canceled_menu, container, false)
+        val view = inflater.inflate(R.layout.fragment_canceled_menu, container, false)
+        recyclerView = view.findViewById(R.id.recycle_view_canceled)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.setHasFixedSize(true)
+        adapter = ProjectProgressCardAdapter(projectCardCanceled)
+        recyclerView.adapter = adapter
+        return view
     }
 
     companion object {
@@ -67,30 +80,39 @@ class CanceledMenuFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        dataInit()
-
-//        val layoutManager = LinearLayoutManager(context)
-//        recyclerView = view.findViewById(R.id.recycle_view_canceled)
-//        recyclerView.layoutManager = layoutManager
-//        recyclerView.setHasFixedSize(true)
-//        adapter = ProjectProgressCardAdapter(projectCardCanceled)
-//        recyclerView.adapter = adapter
+        loadData()
     }
 
-//    private fun dataInit() {
-//        projectCardCanceled = arrayListOf<ProjectProgressCard>()
-//
-//        title = arrayOf("canceled 01", "canceled 02", "canceled 03")
-//        subTitle = arrayOf("Canced, 22/22/2222", "Canced, 22/22/2222", "Canced, 22/22/2222")
-//        desc = arrayOf(
-//            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-//            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-//            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-//        )
-//
-//        for (i in title.indices) {
-//            val project = ProjectProgressCard(title[i], subTitle[i], desc[i])
-//            projectCardCanceled.add(project)
-//        }
-//    }
+    private fun loadData() {
+
+        val api = Rest.getInstance()?.create(ProjectService::class.java)
+        val list: ArrayList<ProjectProgressCard> = ArrayList()
+
+        api?.getAllCanceled()?.enqueue(object : Callback<List<ProjectProgressCard>> {
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onResponse(
+                call: Call<List<ProjectProgressCard>>,
+                response: Response<List<ProjectProgressCard>>
+            ) {
+                if (response.isSuccessful) {
+                    val projectList = response.body()
+
+                    projectList?.forEach { current ->
+                        list.add(current)
+                        adapter.notifyDataSetChanged()
+                    }
+                    projectCardCanceled.addAll(list)
+                    adapter.notifyDataSetChanged()
+                } else {
+                    Toast.makeText(requireContext(), response.message(), Toast.LENGTH_LONG).show()
+                    print("Message: ${response.message()}\n" + "Error Body: ${response.errorBody()}\n" + "Header: ${response.headers()}")
+                }
+            }
+
+            override fun onFailure(call: Call<List<ProjectProgressCard>>, t: Throwable) {
+                Toast.makeText(requireContext(), t.message, Toast.LENGTH_LONG).show()
+                print("Error Api: ${t.message}")
+            }
+        })
+    }
 }

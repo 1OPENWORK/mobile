@@ -6,4 +6,9 @@
         <attr name="img" format="string" />
         <attr name="timer" format="string" />
     </declare-styleable>
+
+    <declare-styleable name="CardMessage">
+        <attr name="message" format="string" />
+        <attr name="timer" format="string" />
+    </declare-styleable>
 </resources>

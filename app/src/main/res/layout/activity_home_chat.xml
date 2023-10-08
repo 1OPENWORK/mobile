@@ -9,7 +9,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="48dp"
         android:text="OpenChat"
         android:textColor="@color/PRIMARY_GREEN"
@@ -46,19 +46,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/meuEditText" />
 
-    <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="559dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <com.stack.open_work_mobile.lay_chat.CardPerson
+        android:id="@+id/cardPerson"
+        android:layout_width="wrap_content"
+        android:layout_height="89dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider">
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" />
-    </ScrollView>
+    <com.stack.open_work_mobile.lay_chat.CardPerson
+        android:layout_width="wrap_content"
+        android:layout_height="89dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardPerson" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

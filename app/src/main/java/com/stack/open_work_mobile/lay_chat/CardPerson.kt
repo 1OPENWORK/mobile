@@ -3,11 +3,9 @@ package com.stack.open_work_mobile.lay_chat
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import android.widget.LinearLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.stack.open_work_mobile.R
 import com.stack.open_work_mobile.databinding.FragmentCardPersonChatBinding
-import java.util.jar.Attributes
 
 class CardPerson @JvmOverloads constructor(
     context: Context,

@@ -23,7 +23,7 @@
             android:text="Busque job por empresa"
             android:paddingStart="16dp"
             android:textColor="@color/GRAY"
-            android:textSize="12dp"
+            android:textSize="12sp"
             android:textStyle="normal"
             android:drawableEnd="@drawable/ic_search_bar"
             android:paddingEnd="8dp"/>
@@ -48,7 +48,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/WHITE"
                 android:textSize="12sp"
-                android:layout_marginRight="16dp"/>
+                android:layout_marginEnd="16dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="72dp"
@@ -60,7 +60,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/WHITE"
                 android:textSize="12sp"
-                android:layout_marginRight="16dp"/>
+                android:layout_marginEnd="16dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="72dp"
@@ -72,7 +72,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/WHITE"
                 android:textSize="12sp"
-                android:layout_marginRight="16dp"/>
+                android:layout_marginEnd="16dp"/>
         </LinearLayout>
 
         <TextView
@@ -80,7 +80,7 @@
             android:layout_width="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="40dp"
             android:paddingBottom="8dp"
             android:text="Encontre os jobs disponiveis para você"
@@ -101,6 +101,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sub_title"
             tools:listitem="@layout/list_item_project_home_open" />

@@ -64,7 +64,7 @@
             app:layout_constraintTop_toBottomOf="@+id/input_email"
             android:layout_marginTop="40dp"
             android:inputType="textEmailAddress"
-            android:hint="E-mail"
+            android:hint="Telefone"
             android:backgroundTint="@color/PRIMARY_GREEN"
             android:textColorHint="@color/PRIMARY_GREEN"
             android:textSize="16sp"/>
@@ -74,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_email"
+            app:layout_constraintTop_toBottomOf="@+id/input_telefone"
             android:layout_marginTop="40dp"
             android:inputType="number"
             android:hint="CPF"

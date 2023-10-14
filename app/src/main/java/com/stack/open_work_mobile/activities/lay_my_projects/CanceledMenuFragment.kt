@@ -25,6 +25,10 @@ private lateinit var adapter: ProjectProgressCardAdapter
 private lateinit var recyclerView: RecyclerView
 private lateinit var projectCardCanceled: ArrayList<ProjectProgressCard>
 
+private val api by lazy {
+    Rest.getInstance()?.create(ProjectService::class.java)
+}
+
 /**
  * A simple [Fragment] subclass.
  * Use the [CanceledMenuFragment.newInstance] factory method to
@@ -85,7 +89,6 @@ class CanceledMenuFragment : Fragment() {
 
     private fun loadData() {
 
-        val api = Rest.getInstance()?.create(ProjectService::class.java)
         val list: ArrayList<ProjectProgressCard> = ArrayList()
 
         api?.getAllCanceled()?.enqueue(object : Callback<List<ProjectProgressCard>> {

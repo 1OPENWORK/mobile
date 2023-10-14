@@ -27,6 +27,11 @@ private lateinit var recycleView: RecyclerView
 private lateinit var projectCardProcessList: ArrayList<ProjectProgressCard>
 
 
+private val api by lazy {
+    Rest.getInstance()?.create(ProjectService::class.java)
+}
+
+
 /**
  * A simple [Fragment] subclass.
  * Use the [ProgressMenuFragment.newInstance] factory method to
@@ -87,7 +92,6 @@ class ProgressMenuFragment : Fragment() {
 
     private fun loadData() {
 
-        val api = Rest.getInstance()?.create(ProjectService::class.java)
         val list: ArrayList<ProjectProgressCard> = ArrayList()
 
         api?.getAllProgress()?.enqueue(object : Callback<List<ProjectProgressCard>> {

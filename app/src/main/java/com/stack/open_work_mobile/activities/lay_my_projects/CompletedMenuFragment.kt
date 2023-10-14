@@ -26,6 +26,10 @@ private lateinit var adapter: ProjectProgressCardAdapter
 private lateinit var recycleView: RecyclerView
 private lateinit var projectCardCompleted: ArrayList<ProjectProgressCard>
 
+private val api by lazy {
+    Rest.getInstance()?.create(ProjectService::class.java)
+}
+
 
 /**
  * A simple [Fragment] subclass.
@@ -88,7 +92,6 @@ class CompletedMenuFragment : Fragment() {
 
     private fun loadData() {
 
-        val api = Rest.getInstance()?.create(ProjectService::class.java)
         val list: ArrayList<ProjectProgressCard> = ArrayList()
 
         api?.getAllCompleted()?.enqueue(object : Callback<List<ProjectProgressCard>> {

@@ -100,25 +100,29 @@ class CompletedMenuFragment : Fragment() {
                 call: Call<List<ProjectProgressCard>>,
                 response: Response<List<ProjectProgressCard>>
             ) {
-                if (response.isSuccessful) {
-                    val projectList = response.body()
+                if (isAdded) {
+                    if (response.isSuccessful) {
+                        val projectList = response.body()
 
-                    projectList?.forEach { current ->
-                        current.progress = 100.0
-                        list.add(current)
+                        projectList?.forEach { current ->
+                            current.progress = 100.0
+                            list.add(current)
+                            adapter.notifyDataSetChanged()
+                        }
+                        projectCardCompleted.addAll(list)
                         adapter.notifyDataSetChanged()
+                    } else {
+                        if (isAdded) Toast.makeText(
+                            requireContext(),
+                            response.message(),
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
-                    projectCardCompleted.addAll(list)
-                    adapter.notifyDataSetChanged()
-                } else {
-                    Toast.makeText(requireContext(), response.message(), Toast.LENGTH_LONG).show()
-                    print("Message: ${response.message()}\n" + "Error Body: ${response.errorBody()}\n" + "Header: ${response.headers()}")
                 }
             }
 
             override fun onFailure(call: Call<List<ProjectProgressCard>>, t: Throwable) {
-                Toast.makeText(requireContext(), t.message, Toast.LENGTH_LONG).show()
-                print("Error Api: ${t.message}")
+                if (isAdded) Toast.makeText(requireContext(), t.message, Toast.LENGTH_LONG).show()
             }
         })
     }

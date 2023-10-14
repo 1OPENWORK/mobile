@@ -1,6 +1,7 @@
 package com.stack.open_work_mobile.activities.lay_home
 
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,7 +11,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.stack.open_work_mobile.R
-import com.stack.open_work_mobile.activities.lay_my_projects.ProjectProgressCard
 import com.stack.open_work_mobile.api.Rest
 import com.stack.open_work_mobile.services.ProjectService
 import retrofit2.Call
@@ -92,27 +92,34 @@ class HomeMenuFragment : Fragment() {
         val list: ArrayList<CardProjectHome> = ArrayList()
 
         api?.getAllProjectsUserTools()?.enqueue(object : Callback<List<CardProjectHome>> {
+            @SuppressLint("NotifyDataSetChanged")
             override fun onResponse(
                 call: Call<List<CardProjectHome>>,
                 response: Response<List<CardProjectHome>>
             ) {
-                if (response.isSuccessful) {
-                    val projectList = response.body()
+                if (isAdded) {
+                    if (response.isSuccessful) {
+                        val projectList = response.body()
 
-                    projectList?.forEach { current ->
-                        list.add(current)
+                        projectList?.forEach {
+                            list.add(it)
+                            adapter.notifyDataSetChanged()
+                        }
+                        projectCardProjectHomeList.addAll(list)
                         adapter.notifyDataSetChanged()
+                    } else {
+                        if (isAdded) Toast.makeText(
+                            requireContext(),
+                            response.message(),
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
-                    projectCardProjectHomeList.addAll(list)
-                    adapter.notifyDataSetChanged()
-                } else {
-                    Toast.makeText(requireContext(), response.message(), Toast.LENGTH_LONG).show()
-                    print("Message: ${response.message()}\n" + "Error Body: ${response.errorBody()}\n" + "Header: ${response.headers()}")
                 }
             }
 
             override fun onFailure(call: Call<List<CardProjectHome>>, t: Throwable) {
-                Toast.makeText(requireContext(), t.message, Toast.LENGTH_LONG).show()
+                if (isAdded) Toast.makeText(requireContext(), t.message, Toast.LENGTH_LONG).show()
+
             }
 
 

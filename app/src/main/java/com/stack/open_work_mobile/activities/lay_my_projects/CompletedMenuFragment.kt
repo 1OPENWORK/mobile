@@ -1,6 +1,7 @@
 package com.stack.open_work_mobile.activities.lay_my_projects
 
 import android.annotation.SuppressLint
+import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -91,10 +92,13 @@ class CompletedMenuFragment : Fragment() {
     }
 
     private fun loadData() {
-
         val list: ArrayList<ProjectProgressCard> = ArrayList()
+        val userId =
+            requireContext()
+                .getSharedPreferences("IDENTIFY", MODE_PRIVATE)
+                .getLong("ID", 0)
 
-        api?.getAllCompleted()?.enqueue(object : Callback<List<ProjectProgressCard>> {
+        api?.getAllCompleted(userId)?.enqueue(object : Callback<List<ProjectProgressCard>> {
             @SuppressLint("NotifyDataSetChanged")
             override fun onResponse(
                 call: Call<List<ProjectProgressCard>>,
@@ -102,6 +106,7 @@ class CompletedMenuFragment : Fragment() {
             ) {
                 if (isAdded) {
                     if (response.isSuccessful) {
+
                         val projectList = response.body()
 
                         projectList?.forEach { current ->

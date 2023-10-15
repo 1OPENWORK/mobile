@@ -9,6 +9,7 @@ import com.stack.open_work_mobile.R
 import com.stack.open_work_mobile.activities.Notify.NotificationActivity
 import com.stack.open_work_mobile.activities.Rating.RatingCompanies
 import com.stack.open_work_mobile.activities.lay_my_projects.MyProject
+import com.stack.open_work_mobile.activities.lay_profile.ProfileActivity
 import com.stack.open_work_mobile.databinding.ActivityHomeBinding
 import com.stack.open_work_mobile.utils.Util
 
@@ -26,6 +27,10 @@ class HomeActivity : AppCompatActivity() {
         Intent(this, NotificationActivity::class.java)
     }
 
+    private val profile by lazy {
+        Intent(this, ProfileActivity::class.java)
+    }
+
 
     @SuppressLint("UseCompatLoadingForColorStateLists")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,9 +40,11 @@ class HomeActivity : AppCompatActivity() {
 
         replaceFragment(HomeMenuFragment())
 
-
         binding.idNotify.setOnClickListener {
             startActivity(notify)
+        }
+        binding.profileImageView.setOnClickListener {
+            startActivity(profile)
         }
         binding.bottomNavigationViewHome.setOnItemSelectedListener() {
             when (it.itemId) {

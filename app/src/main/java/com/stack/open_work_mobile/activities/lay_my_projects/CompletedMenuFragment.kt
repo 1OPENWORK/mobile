@@ -1,7 +1,6 @@
 package com.stack.open_work_mobile.activities.lay_my_projects
 
 import android.annotation.SuppressLint
-import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -26,10 +25,6 @@ private const val ARG_PARAM2 = "param2"
 private lateinit var adapter: ProjectProgressCardAdapter
 private lateinit var recycleView: RecyclerView
 private lateinit var projectCardCompleted: ArrayList<ProjectProgressCard>
-
-private val api by lazy {
-    Rest.getInstance()?.create(ProjectService::class.java)
-}
 
 
 /**
@@ -92,42 +87,35 @@ class CompletedMenuFragment : Fragment() {
     }
 
     private fun loadData() {
-        val list: ArrayList<ProjectProgressCard> = ArrayList()
-        val userId =
-            requireContext()
-                .getSharedPreferences("IDENTIFY", MODE_PRIVATE)
-                .getLong("ID", 0)
 
-        api?.getAllCompleted(userId)?.enqueue(object : Callback<List<ProjectProgressCard>> {
+        val api = Rest.getInstance()?.create(ProjectService::class.java)
+        val list: ArrayList<ProjectProgressCard> = ArrayList()
+
+        api?.getAllCompleted()?.enqueue(object : Callback<List<ProjectProgressCard>> {
             @SuppressLint("NotifyDataSetChanged")
             override fun onResponse(
                 call: Call<List<ProjectProgressCard>>,
                 response: Response<List<ProjectProgressCard>>
             ) {
-                if (isAdded) {
-                    if (response.isSuccessful) {
+                if (response.isSuccessful) {
+                    val projectList = response.body()
 
-                        val projectList = response.body()
-
-                        projectList?.forEach { current ->
-                            current.progress = 100.0
-                            list.add(current)
-                            adapter.notifyDataSetChanged()
-                        }
-                        projectCardCompleted.addAll(list)
+                    projectList?.forEach { current ->
+                        current.progress = 100.0
+                        list.add(current)
                         adapter.notifyDataSetChanged()
-                    } else {
-                        if (isAdded) Toast.makeText(
-                            requireContext(),
-                            response.message(),
-                            Toast.LENGTH_LONG
-                        ).show()
                     }
+                    projectCardCompleted.addAll(list)
+                    adapter.notifyDataSetChanged()
+                } else {
+                    Toast.makeText(requireContext(), response.message(), Toast.LENGTH_LONG).show()
+                    print("Message: ${response.message()}\n" + "Error Body: ${response.errorBody()}\n" + "Header: ${response.headers()}")
                 }
             }
 
             override fun onFailure(call: Call<List<ProjectProgressCard>>, t: Throwable) {
-                if (isAdded) Toast.makeText(requireContext(), t.message, Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), t.message, Toast.LENGTH_LONG).show()
+                print("Error Api: ${t.message}")
             }
         })
     }

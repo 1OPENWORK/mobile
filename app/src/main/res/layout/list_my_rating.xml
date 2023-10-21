@@ -41,8 +41,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
-                        android:layout_marginTop="40dp"
-                        android:src="@drawable/logo_small" />
+                        android:layout_marginTop="40dp" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -120,10 +119,8 @@
                                 android:layout_gravity="start"
                                 android:layout_marginLeft="10dp"
                                 android:isIndicator="false"
-                                android:numStars="5"
                                 android:paddingTop="15dp"
-                                android:rating="0"
-                                android:stepSize="1"
+                                android:numStars="5"
                                 android:theme="@style/RatingBar" />
 
                             <androidx.appcompat.widget.AppCompatButton

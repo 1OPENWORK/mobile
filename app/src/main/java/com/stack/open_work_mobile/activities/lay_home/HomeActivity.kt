@@ -3,6 +3,7 @@ package com.stack.open_work_mobile.activities.lay_home
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.stack.open_work_mobile.R
@@ -15,6 +16,7 @@ import com.stack.open_work_mobile.utils.Util
 
 class HomeActivity : AppCompatActivity() {
 
+
     private lateinit var binding: ActivityHomeBinding
 
     @SuppressLint("UseCompatLoadingForColorStateLists")
@@ -22,6 +24,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         replaceFragment(HomeMenuFragment())
 

@@ -42,7 +42,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="34dp"
         android:fontFamily="@font/nunito_black"
         android:text="Entrar"
         android:textColor="#20AC69"
@@ -68,10 +68,9 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:textColor="@color/BLACK_GRAY"
         android:textColorHint="@color/SECODNARY_GREEEN"
-
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline"
@@ -154,6 +153,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/checkboxLembraSe" />
 
+
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/btn_google_login"
         android:layout_width="44dp"
@@ -177,7 +177,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/nunito_black"
         android:text="Novo?"
         android:textColor="#545454"
@@ -202,7 +202,7 @@
         android:id="@+id/direitos"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="64dp"
         android:fontFamily="@font/nunito_black"
         android:text=" ©️ OpenWork Todos direitos reservados Termos e condições
     e politica de privacidade"
@@ -211,6 +211,6 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@id/guideline_end"
         app:layout_constraintStart_toStartOf="@id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/btn_google_login" />
+        app:layout_constraintTop_toBottomOf="@+id/cadastrar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

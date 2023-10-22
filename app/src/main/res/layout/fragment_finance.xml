@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="68dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="Saldo"
+                android:text="Ultimo Projeto"
                 android:textColor="#20AC69"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -88,23 +88,14 @@
                 android:gravity="center_horizontal"
                 app:layout_constraintTop_toBottomOf="@+id/linearPorcetagem">
 
-                <ImageView
-                    android:id="@+id/graficoIcone"
-                    android:layout_width="60dp"
-                    android:layout_height="48dp"
-                    android:layout_marginRight="26dp"
-                    android:background="@drawable/bg_black_button"
-                    android:padding="14dp"
-                    android:src="@drawable/grafico"
-                    tools:layout_editor_absoluteX="32dp"
-                    tools:layout_editor_absoluteY="274dp" />
+
 
                 <ImageView
                     android:id="@+id/receberIcone"
                     android:layout_width="60dp"
                     android:layout_height="48dp"
                     android:layout_marginRight="26dp"
-                    android:background="@drawable/green_button"
+                    android:background="@drawable/bg_black_button"
                     android:padding="16dp"
                     android:src="@drawable/receber"
                     tools:layout_editor_absoluteX="32dp"
@@ -114,9 +105,8 @@
                     android:id="@+id/recebidoIcone"
                     android:layout_width="60dp"
                     android:layout_height="48dp"
-
                     android:layout_marginRight="26dp"
-                    android:background="@drawable/bg_black_button"
+                    android:background="@drawable/green_button"
                     android:padding="14dp"
                     android:src="@drawable/recebido"
                     tools:layout_editor_absoluteX="32dp"
@@ -142,18 +132,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearOpcoes">
 
-                <TextView
-                    android:id="@+id/graficoSubtitulo"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="26dp"
-                    android:fontFamily="@font/nunito_black"
-                    android:text="Graficos"
-                    android:textAlignment="center"
-                    android:textColor="#20AC69"
-                    android:textSize="12sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+
 
                 <TextView
                     android:id="@+id/AreceberSubtitulo"
@@ -201,279 +180,292 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:fontFamily="@font/nunito_black"
-                android:text="A receber"
+                android:text="A Receber"
                 android:textAlignment="viewStart"
                 android:textColor="#20AC69"
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearOpcoesNomes" />
 
+
             <LinearLayout
-                android:id="@+id/linearCard"
+                android:id="@+id/cardPai"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/card_carteira"
                 android:gravity="center_vertical"
                 android:paddingLeft="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/subtituloCards">
-
-                <ImageView
-                    android:id="@+id/logoEmpresa"
-                    android:layout_width="60dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/logo_small" />
-
-                <LinearLayout
-                    android:id="@+id/linearSubCard"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:paddingLeft="12dp"
-                    android:paddingRight="12dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/subtituloCards">
-
-                    <TextView
-                        android:id="@+id/nomeJob"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="26dp"
-                        android:layout_marginBottom="4dp"
-                        android:fontFamily="@font/nunito_black"
-                        android:text="JOB 1"
-                        android:textAlignment="center"
-                        android:textColor="#FFFFFFFF"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:id="@+id/dataJob"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="26dp"
-                        android:fontFamily="@font/nunito_black"
-                        android:text="30/09/2023"
-                        android:textAlignment="center"
-                        android:textColor="#20AC69"
-                        android:textSize="12sp" />
+                app:layout_constraintTop_toBottomOf="@+id/subtituloCards"
+                android:orientation="vertical">
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/valorJob"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="26dp"
-                    android:fontFamily="@font/nunito_black"
-                    android:text="$100.00,00"
-                    android:textAlignment="center"
-                    android:textColor="#FFFFFFFF"
-                    android:textSize="12sp" />
+<!--            <LinearLayout-->
+<!--                android:id="@+id/linearCard"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:background="@drawable/card_carteira"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:paddingLeft="12dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/subtituloCards">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/logoEmpresa"-->
+<!--                    android:layout_width="60dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:src="@drawable/logo_small" />-->
+
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/linearSubCard"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:paddingLeft="12dp"-->
+<!--                    android:paddingRight="12dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/subtituloCards">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/nomeJob"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginEnd="26dp"-->
+<!--                        android:layout_marginBottom="4dp"-->
+<!--                        android:fontFamily="@font/nunito_black"-->
+<!--                        android:text="JOB 1"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="#FFFFFFFF"-->
+<!--                        android:textSize="12sp" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/dataJob"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginRight="26dp"-->
+<!--                        android:fontFamily="@font/nunito_black"-->
+<!--                        android:text="30/09/2023"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="#20AC69"-->
+<!--                        android:textSize="12sp" />-->
+<!--                </LinearLayout>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/valorJob"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="40dp"-->
+<!--                    android:layout_marginRight="26dp"-->
+<!--                    android:fontFamily="@font/nunito_black"-->
+<!--                    android:text="$100.00,00"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:textColor="#FFFFFFFF"-->
+<!--                    android:textSize="12sp" />-->
 
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
 
-            <LinearLayout
-                android:id="@+id/linearCard2"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/card_carteira"
-                android:gravity="center_vertical"
-                android:paddingStart="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearCard">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/linearCard2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:background="@drawable/card_carteira"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:paddingStart="12dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/linearCard">-->
 
-                <ImageView
-                    android:id="@+id/logoEmpresa2"
-                    android:layout_width="60dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/logo_small" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/logoEmpresa2"-->
+<!--                    android:layout_width="60dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:src="@drawable/logo_small" />-->
 
-                <LinearLayout
-                    android:id="@+id/linearSubCard2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:paddingLeft="12dp"
-                    android:paddingRight="12dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/subtituloCards">
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/linearSubCard2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:paddingLeft="12dp"-->
+<!--                    android:paddingRight="12dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/subtituloCards">-->
 
-                    <TextView
-                        android:id="@+id/nomeJob2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="26dp"
-                        android:layout_marginBottom="4dp"
-                        android:fontFamily="@font/nunito_black"
-                        android:text="JOB 1"
-                        android:textAlignment="center"
-                        android:textColor="#FFFFFFFF"
-                        android:textSize="12sp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/nomeJob2"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginRight="26dp"-->
+<!--                        android:layout_marginBottom="4dp"-->
+<!--                        android:fontFamily="@font/nunito_black"-->
+<!--                        android:text="JOB 1"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="#FFFFFFFF"-->
+<!--                        android:textSize="12sp" />-->
 
-                    <TextView
-                        android:id="@+id/dataJob2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="26dp"
-                        android:fontFamily="@font/nunito_black"
-                        android:text="30/09/2023"
-                        android:textAlignment="center"
-                        android:textColor="#20AC69"
-                        android:textSize="12sp" />
-                </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:id="@+id/dataJob2"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginEnd="26dp"-->
+<!--                        android:fontFamily="@font/nunito_black"-->
+<!--                        android:text="30/09/2023"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="#20AC69"-->
+<!--                        android:textSize="12sp" />-->
+<!--                </LinearLayout>-->
 
-                <TextView
-                    android:id="@+id/valorJob2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="26dp"
-                    android:fontFamily="@font/nunito_black"
-                    android:text="$100.00,00"
-                    android:textAlignment="center"
-                    android:textColor="#FFFFFFFF"
-                    android:textSize="12sp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/valorJob2"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="40dp"-->
+<!--                    android:layout_marginRight="26dp"-->
+<!--                    android:fontFamily="@font/nunito_black"-->
+<!--                    android:text="$100.00,00"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:textColor="#FFFFFFFF"-->
+<!--                    android:textSize="12sp" />-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
 
-            <LinearLayout
-                android:id="@+id/linearCard3"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/card_carteira"
-                android:gravity="center_vertical"
-                android:paddingStart="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearCard2">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/linearCard3"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:background="@drawable/card_carteira"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:paddingStart="12dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/linearCard2">-->
 
-                <ImageView
-                    android:id="@+id/logoEmpresa3"
-                    android:layout_width="60dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/logo_small" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/logoEmpresa3"-->
+<!--                    android:layout_width="60dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:src="@drawable/logo_small" />-->
 
-                <LinearLayout
-                    android:id="@+id/linearSubCard3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:paddingLeft="12dp"
-                    android:paddingRight="12dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/subtituloCards">
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/linearSubCard3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:paddingLeft="12dp"-->
+<!--                    android:paddingRight="12dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/subtituloCards">-->
 
-                    <TextView
-                        android:id="@+id/nomeJob3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="26dp"
-                        android:layout_marginBottom="4dp"
-                        android:fontFamily="@font/nunito_black"
-                        android:text="JOB 1"
-                        android:textAlignment="center"
-                        android:textColor="#FFFFFFFF"
-                        android:textSize="12sp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/nomeJob3"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginRight="26dp"-->
+<!--                        android:layout_marginBottom="4dp"-->
+<!--                        android:fontFamily="@font/nunito_black"-->
+<!--                        android:text="JOB 1"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="#FFFFFFFF"-->
+<!--                        android:textSize="12sp" />-->
 
-                    <TextView
-                        android:id="@+id/dataJob3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="26dp"
-                        android:fontFamily="@font/nunito_black"
-                        android:text="30/09/2023"
-                        android:textAlignment="center"
-                        android:textColor="#20AC69"
-                        android:textSize="12sp" />
-                </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:id="@+id/dataJob3"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginRight="26dp"-->
+<!--                        android:fontFamily="@font/nunito_black"-->
+<!--                        android:text="30/09/2023"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="#20AC69"-->
+<!--                        android:textSize="12sp" />-->
+<!--                </LinearLayout>-->
 
-                <TextView
-                    android:id="@+id/valorJob3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="26dp"
-                    android:fontFamily="@font/nunito_black"
-                    android:text="$100.00,00"
-                    android:textAlignment="center"
-                    android:textColor="#FFFFFFFF"
-                    android:textSize="12sp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/valorJob3"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="40dp"-->
+<!--                    android:layout_marginRight="26dp"-->
+<!--                    android:fontFamily="@font/nunito_black"-->
+<!--                    android:text="$100.00,00"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:textColor="#FFFFFFFF"-->
+<!--                    android:textSize="12sp" />-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
-            <LinearLayout
-                android:id="@+id/linearCard4"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/card_carteira"
-                android:gravity="center_vertical"
-                android:paddingLeft="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearCard3">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/linearCard4"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:background="@drawable/card_carteira"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:paddingLeft="12dp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/linearCard3">-->
 
-                <ImageView
-                    android:id="@+id/logoEmpresa4"
-                    android:layout_width="60dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/logo_small" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/logoEmpresa4"-->
+<!--                    android:layout_width="60dp"-->
+<!--                    android:layout_height="48dp"-->
+<!--                    android:src="@drawable/logo_small" />-->
 
-                <LinearLayout
-                    android:id="@+id/linearSubCard4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:paddingLeft="12dp"
-                    android:paddingRight="12dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/subtituloCards">
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/linearSubCard4"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center_horizontal"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:paddingLeft="12dp"-->
+<!--                    android:paddingRight="12dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/subtituloCards">-->
 
-                    <TextView
-                        android:id="@+id/nomeJob4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="26dp"
-                        android:layout_marginBottom="4dp"
-                        android:fontFamily="@font/nunito_black"
-                        android:text="JOB 1"
-                        android:textAlignment="center"
-                        android:textColor="#FFFFFFFF"
-                        android:textSize="12sp" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/nomeJob4"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginRight="26dp"-->
+<!--                        android:layout_marginBottom="4dp"-->
+<!--                        android:fontFamily="@font/nunito_black"-->
+<!--                        android:text="JOB 1"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="#FFFFFFFF"-->
+<!--                        android:textSize="12sp" />-->
 
-                    <TextView
-                        android:id="@+id/dataJob4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="26dp"
-                        android:fontFamily="@font/nunito_black"
-                        android:text="30/09/2023"
-                        android:textAlignment="center"
-                        android:textColor="#20AC69"
-                        android:textSize="12sp" />
-                </LinearLayout>
+<!--                    <TextView-->
+<!--                        android:id="@+id/dataJob4"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginRight="26dp"-->
+<!--                        android:fontFamily="@font/nunito_black"-->
+<!--                        android:text="30/09/2023"-->
+<!--                        android:textAlignment="center"-->
+<!--                        android:textColor="#20AC69"-->
+<!--                        android:textSize="12sp" />-->
+<!--                </LinearLayout>-->
 
-                <TextView
-                    android:id="@+id/valorJob4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginRight="26dp"
-                    android:fontFamily="@font/nunito_black"
-                    android:text="$100.00,00"
-                    android:textAlignment="center"
-                    android:textColor="#FFFFFFFF"
-                    android:textSize="12sp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/valorJob4"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="40dp"-->
+<!--                    android:layout_marginRight="26dp"-->
+<!--                    android:fontFamily="@font/nunito_black"-->
+<!--                    android:text="$100.00,00"-->
+<!--                    android:textAlignment="center"-->
+<!--                    android:textColor="#FFFFFFFF"-->
+<!--                    android:textSize="12sp" />-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

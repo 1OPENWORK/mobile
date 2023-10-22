@@ -10,5 +10,6 @@
     <string name="minhas_aval">Minhas avaliações</string>
     <string name="avaliar">Avaliar</string>
     <string name="textcompaniedescription">Criar plataforma freelancer do zero, backend, frontend, bd conectado na nuvem, e aplicação mobile. </string>
+    <string name="default_web_client_id">282081990052-j7ipq4s8icgvp8t7lbn61kmrbgi7qo26.apps.googleusercontent.com</string>
 
 </resources>

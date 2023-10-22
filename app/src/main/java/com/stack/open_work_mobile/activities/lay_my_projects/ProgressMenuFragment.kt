@@ -27,6 +27,11 @@ private lateinit var recycleView: RecyclerView
 private lateinit var projectCardProcessList: ArrayList<ProjectProgressCard>
 
 
+private val api by lazy {
+    Rest.getInstance()?.create(ProjectService::class.java)
+}
+
+
 /**
  * A simple [Fragment] subclass.
  * Use the [ProgressMenuFragment.newInstance] factory method to
@@ -87,7 +92,6 @@ class ProgressMenuFragment : Fragment() {
 
     private fun loadData() {
 
-        val api = Rest.getInstance()?.create(ProjectService::class.java)
         val list: ArrayList<ProjectProgressCard> = ArrayList()
 
         api?.getAllProgress()?.enqueue(object : Callback<List<ProjectProgressCard>> {
@@ -96,24 +100,29 @@ class ProgressMenuFragment : Fragment() {
                 call: Call<List<ProjectProgressCard>>,
                 response: Response<List<ProjectProgressCard>>
             ) {
-                if (response.isSuccessful) {
-                    val projectList = response.body()
+                if (isAdded) {
+                    if (response.isSuccessful) {
+                        val projectList = response.body()
 
-                    projectList?.forEach { current ->
-                        list.add(current)
+                        projectList?.forEach {
+                            list.add(it)
+                            adapter.notifyDataSetChanged()
+                        }
+                        projectCardProcessList.addAll(list)
                         adapter.notifyDataSetChanged()
+                    } else {
+                        if (isAdded) Toast.makeText(
+                            requireContext(),
+                            response.message(),
+                            Toast.LENGTH_LONG
+                        )
+                            .show()
                     }
-                    projectCardProcessList.addAll(list)
-                    adapter.notifyDataSetChanged()
-                } else {
-                    Toast.makeText(requireContext(), response.message(), Toast.LENGTH_LONG).show()
-                    print("Message: ${response.message()}\n" + "Error Body: ${response.errorBody()}\n" + "Header: ${response.headers()}")
                 }
             }
 
             override fun onFailure(call: Call<List<ProjectProgressCard>>, t: Throwable) {
-                Toast.makeText(requireContext(), t.message, Toast.LENGTH_LONG).show()
-                print("Error Api: ${t.message}")
+                if (isAdded) Toast.makeText(requireContext(), t.message, Toast.LENGTH_LONG).show()
             }
         })
     }

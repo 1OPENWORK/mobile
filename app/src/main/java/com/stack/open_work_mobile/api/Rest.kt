@@ -19,7 +19,7 @@ object Rest {
 
         return Retrofit
             .Builder()
-            .baseUrl("https://openwork.ddns.net/api/")
+            .baseUrl("http://52.21.11.236:8080/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()

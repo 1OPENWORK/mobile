@@ -100,7 +100,6 @@ class NotificationActivity : AppCompatActivity() {
         })
 
 
-        // Vincule o ItemTouchHelper à RecyclerView
         itemTouchHelper.attachToRecyclerView(recyclerView)
     }
 

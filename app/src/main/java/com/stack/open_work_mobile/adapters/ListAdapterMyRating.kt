@@ -38,13 +38,13 @@ class ListAdapterMyRating(
     override fun onBindViewHolder(holder: MyViewHolderListRatingCompany, position: Int) {
         val currentItem = ratingCompanies[position]
 
-        holder.name.text = currentItem.evaluates[position].name
-        holder.description.text = currentItem.evaluates[position].description
-        holder.timeExpected.text = currentItem.evaluates[position].timeExpected.toString()
-        holder.myGrade.text = currentItem.evaluates[position].grade.toString()
-        holder.rating.rating = currentItem.evaluates[position].grade.toFloat()
+        holder.name.text = currentItem.myAvaliations[position].name
+        holder.description.text = currentItem.myAvaliations[position].description
+        holder.timeExpected.text = currentItem.myAvaliations[position].timeExpected.toString()
+        holder.myGrade.text = currentItem.myAvaliations[position].grade.toString()
+        holder.rating.rating = currentItem.myAvaliations[position].grade.toFloat()
         Glide.with(holder.itemView)
-            .load(currentItem.evaluates[position].image)
+            .load(currentItem.myAvaliations[position].image)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .override(100, 100)
             .into(holder.logo)

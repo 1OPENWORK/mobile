@@ -62,12 +62,12 @@ class MyCompanyFragment : Fragment(), OnAvaliarClickListener {
 
     override fun onAvaliarClick(grade: Int) {
         val api = Rest.getInstance()?.create(AvaliationService::class.java)
-        val userId = 1 // Substitua pelo ID da empresa ou desenvolvedor desejado
+        val userId = 3 // Substitua pelo ID da empresa ou desenvolvedor desejado
 
         // Configurar a chamada para enviar a avaliação
-        val call = api?.registerAvaliationDeveloper(userId, grade) // Convertemos o valor da classificação para um inteiro
+        val call = api?.registerAvaliationDeveloper(1, grade,userId) // Convertemos o valor da classificação para um inteiro
 
-
+        Log.e("API Success", "${grade}!")
         call?.enqueue(object : Callback<RatingCompanies> {
             override fun onResponse(call: Call<RatingCompanies>, response: Response<RatingCompanies>) {
                 if (response.isSuccessful) {
@@ -91,7 +91,7 @@ class MyCompanyFragment : Fragment(), OnAvaliarClickListener {
         val api = Rest.getInstance()?.create(AvaliationService::class.java)
         val list: ArrayList<RatingCompanies> = ArrayList()
 
-        api?.getAvaliationsCompany(1)?.enqueue(object : Callback<RatingCompanies> {
+        api?.getAvaliationsDev(3)?.enqueue(object : Callback<RatingCompanies> {
             override fun onResponse(
                 call: Call<RatingCompanies>,
                 response: Response<RatingCompanies>
@@ -100,14 +100,21 @@ class MyCompanyFragment : Fragment(), OnAvaliarClickListener {
                     val avaliationListsDto = response.body()
                     Log.e("API Success", "Sucesso! $avaliationListsDto")
                     if (avaliationListsDto != null) {
+                        Log.e("API Success", "Sucesso! $rating")
                         val evaluates = avaliationListsDto.evaluates
                         for (evaluate in evaluates) {
                             rating.add(avaliationListsDto)
                             adapter.notifyDataSetChanged()
+                            Log.e("API Success", "Sucesso! $rating")
+
                         }
                     }
+
+
+
                 } else {
                     Toast.makeText(requireContext(), response.message(), Toast.LENGTH_LONG).show()
+                    Log.e("API Error", "Erro ${response.errorBody()}")
                     print("Message: ${response.message()}\n" + "Error Body: ${response.errorBody()}\n" + "Header: ${response.headers()}")
                 }
             }

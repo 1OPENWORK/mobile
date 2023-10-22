@@ -8,16 +8,17 @@ import retrofit2.http.Path
 
 interface AvaliationService {
 
-    @GET("/avaliacoes/desenvolvedor/{id}")
+    @GET("avaliacoes/desenvolvedor/{id}")
     fun getAvaliationsDev(@Path("id") id: Int): Call<RatingCompanies>
 
-    @GET("/avaliacoes/empresa/{id}")
+    @GET("avaliacoes/empresa/{id}")
     fun getAvaliationsCompany(@Path("id") id: Int): Call<RatingCompanies>
 
-    @POST("/empresa/{id}/{grade}")
+    @POST("avaliacoes/desenvolvedor/{id}/{grade}/{userId}")
     fun registerAvaliationDeveloper(
         @Path("id") id: Int,
-        @Path("grade") grade: Int
+        @Path("grade") grade: Int,
+        @Path("userId") userId: Int
     ): Call<RatingCompanies>
 
 

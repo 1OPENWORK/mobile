@@ -98,6 +98,7 @@ class HomeMenuFragment : Fragment() {
                 response: Response<List<CardProjectHome>>
             ) {
                 if (response.isSuccessful) {
+                    Log.e("API Error", "Erro ${api}")
                     val projectList = response.body()
 
                     projectList?.forEach { current ->

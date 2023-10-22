@@ -108,7 +108,7 @@ class RatingCompanyFragment : Fragment() {
                     val avaliationListsDto = response.body()
 
                     if (avaliationListsDto != null) {
-                        val evaluates = avaliationListsDto.evaluates
+                        val evaluates = avaliationListsDto.myAvaliations
                         for (evaluate in evaluates) {
                             rating.add(avaliationListsDto)
                             adapter.notifyDataSetChanged()
